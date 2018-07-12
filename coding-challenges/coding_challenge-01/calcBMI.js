@@ -1,4 +1,4 @@
-let mass, height;
+let isHigher, mass, height;
 
 let mark = {
   name: 'Mark',
@@ -13,4 +13,11 @@ let john = {
 };
 
 const bmi = (mass, height) => mass / (height * height);
-console.log(bmi(60, 1.6));
+
+console.log(`Is ${mark.name}'s BMI higher than ${john.name}'s?`);
+
+if (bmi(mark.mass, mark.height) > bmi(john.mass, john.height)) {
+  console.log(true);
+} else {
+  console.log(false);
+}
