@@ -10,6 +10,10 @@ const data = [
   {
     name: 'Mary',
     games: [97, 134, 105]
+  },
+  {
+    name: 'Steve',
+    games: [197, 159, 205]
   }
 ];
 
@@ -18,12 +22,15 @@ let averageScores = [];
 
 const average = data => {
   data.forEach((team, index) => {
+    let currentTotal = 0; // intialize a runnint total for the average
     // calcularte the average
     team.games.forEach(item => {
-      let total = 0;
-      total += item;
-      return (team.average = (total / team.games.length).toPrecision(4));
+      currentTotal += item;
+      console.log(currentTotal);
+      return (team.average = (currentTotal / team.games.length).toPrecision(4));
     });
+    // reset the running total for aeach itiration
+    currentTotal = 0;
 
     // find the largest average
     averageScores.push(team.average);
